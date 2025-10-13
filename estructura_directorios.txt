@@ -1,0 +1,2625 @@
+.
+|-- README.md
+|-- _diagnostico
+|   |-- diagnostico_20251010_174233.log
+|   |-- diagnostico_20251010_180630.log
+|   |-- diagnostico_20251010_181059.log
+|   |-- diagnostico_20251010_181627.log
+|   |-- diagnostico_20251010_181859.log
+|   |-- diagnostico_20251010_184442.log
+|   |-- diagnostico_20251011_020149.log
+|   |-- diagnostico_20251011_174600.log
+|   |-- diagnostico_20251011_174748.log
+|   |-- diagnostico_20251011_174835.log
+|   |-- diagnostico_20251011_175137.log
+|   |-- diagnostico_20251011_180802.log
+|   |-- diagnostico_20251011_181956.log
+|   |-- diagnostico_20251011_182453.log
+|   |-- diagnostico_20251011_182518.log
+|   |-- diagnostico_20251011_183026.log
+|   |-- diagnostico_20251011_183529.log
+|   |-- diagnostico_20251011_184152.log
+|   |-- diagnostico_20251011_184352.log
+|   |-- diagnostico_20251011_185009.log
+|   |-- diagnostico_20251011_185455.log
+|   |-- diagnostico_20251011_185858.log
+|   |-- diagnostico_20251011_191719.log
+|   |-- diagnostico_20251011_192632.log
+|   |-- diagnostico_20251011_193659.log
+|   |-- diagnostico_20251011_194523.log
+|   |-- estructura_directorio.log
+|   `-- package-lock.json
+|-- api
+|   |-- controllers
+|   |   |-- admin
+|   |   |   |-- diagnosticoRespaldo.js
+|   |   |   |-- forzarSaneamientoDB.js
+|   |   |   `-- visualizarLogRespaldo.js
+|   |   |-- auth.js
+|   |   `-- monedas
+|   |       `-- obtenerPreciosMonedas.js
+|   |-- db.js
+|   |-- docs
+|   |   `-- tasas.md
+|   |-- fuentes
+|   |   `-- index.js
+|   |-- logs
+|   |   `-- registrar.js
+|   |-- middleware
+|   |   `-- verificarAdmin.js
+|   |-- models
+|   |-- node_modules
+|   |   |-- accepts
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- body-parser
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   |-- lib
+|   |   |   `-- package.json
+|   |   |-- buffer-equal-constant-time
+|   |   |   |-- LICENSE.txt
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   |-- package.json
+|   |   |   `-- test.js
+|   |   |-- bytes
+|   |   |   |-- History.md
+|   |   |   |-- LICENSE
+|   |   |   |-- Readme.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- call-bind-apply-helpers
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- actualApply.d.ts
+|   |   |   |-- actualApply.js
+|   |   |   |-- applyBind.d.ts
+|   |   |   |-- applyBind.js
+|   |   |   |-- functionApply.d.ts
+|   |   |   |-- functionApply.js
+|   |   |   |-- functionCall.d.ts
+|   |   |   |-- functionCall.js
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- package.json
+|   |   |   |-- reflectApply.d.ts
+|   |   |   |-- reflectApply.js
+|   |   |   |-- test
+|   |   |   `-- tsconfig.json
+|   |   |-- call-bound
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- package.json
+|   |   |   |-- test
+|   |   |   `-- tsconfig.json
+|   |   |-- content-disposition
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- content-type
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- cookie
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- SECURITY.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- cookie-signature
+|   |   |   |-- History.md
+|   |   |   |-- LICENSE
+|   |   |   |-- Readme.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- debug
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- package.json
+|   |   |   `-- src
+|   |   |-- depd
+|   |   |   |-- History.md
+|   |   |   |-- LICENSE
+|   |   |   |-- Readme.md
+|   |   |   |-- index.js
+|   |   |   |-- lib
+|   |   |   `-- package.json
+|   |   |-- dunder-proto
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- get.d.ts
+|   |   |   |-- get.js
+|   |   |   |-- package.json
+|   |   |   |-- set.d.ts
+|   |   |   |-- set.js
+|   |   |   |-- test
+|   |   |   `-- tsconfig.json
+|   |   |-- ecdsa-sig-formatter
+|   |   |   |-- CODEOWNERS
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- package.json
+|   |   |   `-- src
+|   |   |-- ee-first
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- encodeurl
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- es-define-property
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- package.json
+|   |   |   |-- test
+|   |   |   `-- tsconfig.json
+|   |   |-- es-errors
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- eval.d.ts
+|   |   |   |-- eval.js
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- package.json
+|   |   |   |-- range.d.ts
+|   |   |   |-- range.js
+|   |   |   |-- ref.d.ts
+|   |   |   |-- ref.js
+|   |   |   |-- syntax.d.ts
+|   |   |   |-- syntax.js
+|   |   |   |-- test
+|   |   |   |-- tsconfig.json
+|   |   |   |-- type.d.ts
+|   |   |   |-- type.js
+|   |   |   |-- uri.d.ts
+|   |   |   `-- uri.js
+|   |   |-- es-object-atoms
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- RequireObjectCoercible.d.ts
+|   |   |   |-- RequireObjectCoercible.js
+|   |   |   |-- ToObject.d.ts
+|   |   |   |-- ToObject.js
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- isObject.d.ts
+|   |   |   |-- isObject.js
+|   |   |   |-- package.json
+|   |   |   |-- test
+|   |   |   `-- tsconfig.json
+|   |   |-- escape-html
+|   |   |   |-- LICENSE
+|   |   |   |-- Readme.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- etag
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- express
+|   |   |   |-- History.md
+|   |   |   |-- LICENSE
+|   |   |   |-- Readme.md
+|   |   |   |-- index.js
+|   |   |   |-- lib
+|   |   |   `-- package.json
+|   |   |-- finalhandler
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- forwarded
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- fresh
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- function-bind
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- implementation.js
+|   |   |   |-- index.js
+|   |   |   |-- package.json
+|   |   |   `-- test
+|   |   |-- get-intrinsic
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   |-- package.json
+|   |   |   `-- test
+|   |   |-- get-proto
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- Object.getPrototypeOf.d.ts
+|   |   |   |-- Object.getPrototypeOf.js
+|   |   |   |-- README.md
+|   |   |   |-- Reflect.getPrototypeOf.d.ts
+|   |   |   |-- Reflect.getPrototypeOf.js
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- package.json
+|   |   |   |-- test
+|   |   |   `-- tsconfig.json
+|   |   |-- gopd
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- gOPD.d.ts
+|   |   |   |-- gOPD.js
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- package.json
+|   |   |   |-- test
+|   |   |   `-- tsconfig.json
+|   |   |-- has-symbols
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- package.json
+|   |   |   |-- shams.d.ts
+|   |   |   |-- shams.js
+|   |   |   |-- test
+|   |   |   `-- tsconfig.json
+|   |   |-- hasown
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- package.json
+|   |   |   `-- tsconfig.json
+|   |   |-- http-errors
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   |-- node_modules
+|   |   |   `-- package.json
+|   |   |-- iconv-lite
+|   |   |   |-- Changelog.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- encodings
+|   |   |   |-- lib
+|   |   |   `-- package.json
+|   |   |-- inherits
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- inherits.js
+|   |   |   |-- inherits_browser.js
+|   |   |   `-- package.json
+|   |   |-- ipaddr.js
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- ipaddr.min.js
+|   |   |   |-- lib
+|   |   |   `-- package.json
+|   |   |-- is-promise
+|   |   |   |-- LICENSE
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- index.mjs
+|   |   |   |-- package.json
+|   |   |   `-- readme.md
+|   |   |-- jsonwebtoken
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- decode.js
+|   |   |   |-- index.js
+|   |   |   |-- lib
+|   |   |   |-- package.json
+|   |   |   |-- sign.js
+|   |   |   `-- verify.js
+|   |   |-- jwa
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- jws
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- index.js
+|   |   |   |-- lib
+|   |   |   |-- package.json
+|   |   |   `-- readme.md
+|   |   |-- lodash.includes
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- lodash.isboolean
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- lodash.isinteger
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- lodash.isnumber
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- lodash.isplainobject
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- lodash.isstring
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- lodash.once
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- math-intrinsics
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- abs.d.ts
+|   |   |   |-- abs.js
+|   |   |   |-- constants
+|   |   |   |-- floor.d.ts
+|   |   |   |-- floor.js
+|   |   |   |-- isFinite.d.ts
+|   |   |   |-- isFinite.js
+|   |   |   |-- isInteger.d.ts
+|   |   |   |-- isInteger.js
+|   |   |   |-- isNaN.d.ts
+|   |   |   |-- isNaN.js
+|   |   |   |-- isNegativeZero.d.ts
+|   |   |   |-- isNegativeZero.js
+|   |   |   |-- max.d.ts
+|   |   |   |-- max.js
+|   |   |   |-- min.d.ts
+|   |   |   |-- min.js
+|   |   |   |-- mod.d.ts
+|   |   |   |-- mod.js
+|   |   |   |-- package.json
+|   |   |   |-- pow.d.ts
+|   |   |   |-- pow.js
+|   |   |   |-- round.d.ts
+|   |   |   |-- round.js
+|   |   |   |-- sign.d.ts
+|   |   |   |-- sign.js
+|   |   |   |-- test
+|   |   |   `-- tsconfig.json
+|   |   |-- media-typer
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- merge-descriptors
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- license
+|   |   |   |-- package.json
+|   |   |   `-- readme.md
+|   |   |-- mime-db
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- db.json
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- mime-types
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   |-- mimeScore.js
+|   |   |   `-- package.json
+|   |   |-- ms
+|   |   |   |-- index.js
+|   |   |   |-- license.md
+|   |   |   |-- package.json
+|   |   |   `-- readme.md
+|   |   |-- negotiator
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   |-- lib
+|   |   |   `-- package.json
+|   |   |-- object-inspect
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- example
+|   |   |   |-- index.js
+|   |   |   |-- package-support.json
+|   |   |   |-- package.json
+|   |   |   |-- readme.markdown
+|   |   |   |-- test
+|   |   |   |-- test-core-js.js
+|   |   |   `-- util.inspect.js
+|   |   |-- on-finished
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- once
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- once.js
+|   |   |   `-- package.json
+|   |   |-- parseurl
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- path-to-regexp
+|   |   |   |-- LICENSE
+|   |   |   |-- Readme.md
+|   |   |   |-- dist
+|   |   |   `-- package.json
+|   |   |-- pg
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- esm
+|   |   |   |-- lib
+|   |   |   `-- package.json
+|   |   |-- pg-cloudflare
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- dist
+|   |   |   |-- esm
+|   |   |   |-- package.json
+|   |   |   `-- src
+|   |   |-- pg-connection-string
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- esm
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- pg-int8
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- pg-pool
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- esm
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- pg-protocol
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- dist
+|   |   |   |-- esm
+|   |   |   |-- package.json
+|   |   |   `-- src
+|   |   |-- pg-types
+|   |   |   |-- Makefile
+|   |   |   |-- README.md
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- index.test-d.ts
+|   |   |   |-- lib
+|   |   |   |-- package.json
+|   |   |   `-- test
+|   |   |-- pgpass
+|   |   |   |-- README.md
+|   |   |   |-- lib
+|   |   |   `-- package.json
+|   |   |-- postgres-array
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- license
+|   |   |   |-- package.json
+|   |   |   `-- readme.md
+|   |   |-- postgres-bytea
+|   |   |   |-- index.js
+|   |   |   |-- license
+|   |   |   |-- package.json
+|   |   |   `-- readme.md
+|   |   |-- postgres-date
+|   |   |   |-- index.js
+|   |   |   |-- license
+|   |   |   |-- package.json
+|   |   |   `-- readme.md
+|   |   |-- postgres-interval
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- license
+|   |   |   |-- package.json
+|   |   |   `-- readme.md
+|   |   |-- proxy-addr
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- qs
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE.md
+|   |   |   |-- README.md
+|   |   |   |-- dist
+|   |   |   |-- lib
+|   |   |   |-- package.json
+|   |   |   `-- test
+|   |   |-- range-parser
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- raw-body
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- SECURITY.md
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- node_modules
+|   |   |   `-- package.json
+|   |   |-- router
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   |-- lib
+|   |   |   `-- package.json
+|   |   |-- safe-buffer
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- safer-buffer
+|   |   |   |-- LICENSE
+|   |   |   |-- Porting-Buffer.md
+|   |   |   |-- Readme.md
+|   |   |   |-- dangerous.js
+|   |   |   |-- package.json
+|   |   |   |-- safer.js
+|   |   |   `-- tests.js
+|   |   |-- semver
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- bin
+|   |   |   |-- classes
+|   |   |   |-- functions
+|   |   |   |-- index.js
+|   |   |   |-- internal
+|   |   |   |-- package.json
+|   |   |   |-- preload.js
+|   |   |   |-- range.bnf
+|   |   |   `-- ranges
+|   |   |-- send
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- serve-static
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- setprototypeof
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- package.json
+|   |   |   `-- test
+|   |   |-- side-channel
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- package.json
+|   |   |   |-- test
+|   |   |   `-- tsconfig.json
+|   |   |-- side-channel-list
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- list.d.ts
+|   |   |   |-- package.json
+|   |   |   |-- test
+|   |   |   `-- tsconfig.json
+|   |   |-- side-channel-map
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- package.json
+|   |   |   |-- test
+|   |   |   `-- tsconfig.json
+|   |   |-- side-channel-weakmap
+|   |   |   |-- CHANGELOG.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- package.json
+|   |   |   |-- test
+|   |   |   `-- tsconfig.json
+|   |   |-- split2
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- bench.js
+|   |   |   |-- index.js
+|   |   |   |-- package.json
+|   |   |   `-- test.js
+|   |   |-- statuses
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- codes.json
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- toidentifier
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- type-is
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- unpipe
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- vary
+|   |   |   |-- HISTORY.md
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- index.js
+|   |   |   `-- package.json
+|   |   |-- wrappy
+|   |   |   |-- LICENSE
+|   |   |   |-- README.md
+|   |   |   |-- package.json
+|   |   |   `-- wrappy.js
+|   |   `-- xtend
+|   |       |-- LICENSE
+|   |       |-- README.md
+|   |       |-- immutable.js
+|   |       |-- mutable.js
+|   |       |-- package.json
+|   |       `-- test.js
+|   |-- package-lock.json
+|   |-- package.json
+|   |-- routes
+|   |   |-- admin.js
+|   |   |-- auth.js
+|   |   |-- login
+|   |   `-- tasas.js
+|   |-- server.js
+|   `-- utils
+|       `-- monedas.js
+|-- backend
+|   |-- controllers
+|   |   `-- admin
+|   |       `-- respaldoAutolimpieza.js
+|   |-- funciones
+|   |-- logs
+|   |   |-- autolimpieza.log
+|   |   |-- respaldo_autolimpieza_202510.log
+|   |   |-- verificacion_estructura_20251010_011116.log
+|   |   |-- verificacion_estructura_20251010_174233.log
+|   |   |-- verificacion_estructura_20251010_180630.log
+|   |   |-- verificacion_estructura_20251010_181059.log
+|   |   |-- verificacion_estructura_20251010_181627.log
+|   |   |-- verificacion_estructura_20251010_181859.log
+|   |   |-- verificacion_estructura_20251010_184442.log
+|   |   |-- verificacion_estructura_20251011_020149.log
+|   |   |-- verificacion_estructura_20251011_174600.log
+|   |   |-- verificacion_estructura_20251011_174748.log
+|   |   |-- verificacion_estructura_20251011_174835.log
+|   |   |-- verificacion_estructura_20251011_175137.log
+|   |   |-- verificacion_estructura_20251011_180802.log
+|   |   |-- verificacion_estructura_20251011_181956.log
+|   |   |-- verificacion_estructura_20251011_182453.log
+|   |   |-- verificacion_estructura_20251011_182518.log
+|   |   |-- verificacion_estructura_20251011_183026.log
+|   |   |-- verificacion_estructura_20251011_183529.log
+|   |   |-- verificacion_estructura_20251011_184152.log
+|   |   |-- verificacion_estructura_20251011_184352.log
+|   |   |-- verificacion_estructura_20251011_185009.log
+|   |   |-- verificacion_estructura_20251011_185455.log
+|   |   |-- verificacion_estructura_20251011_185858.log
+|   |   |-- verificacion_estructura_20251011_191719.log
+|   |   |-- verificacion_estructura_20251011_192632.log
+|   |   |-- verificacion_estructura_20251011_193659.log
+|   |   `-- verificacion_estructura_20251011_194523.log
+|   |-- middleware
+|   |   `-- verificarAdmin.js
+|   `-- routes
+|-- backups
+|   |-- diagnostico_auditoria.log
+|   |-- diagnostico_log.json
+|   |-- riesgos_data_20251009_1510.dump
+|   |-- riesgos_data_20251009_223405.dump
+|   |-- riesgos_data_20251009_223432.dump
+|   |-- riesgos_data_20251010_000338.dump
+|   |-- riesgos_data_20251010_000700.dump
+|   |-- riesgos_data_20251010_001300.dump
+|   |-- riesgos_data_20251010_001417.dump
+|   |-- riesgos_data_20251010_001556.dump
+|   |-- riesgos_data_20251010_004528.dump
+|   |-- riesgos_data_20251010_010519.dump
+|   |-- riesgos_data_20251010_174233.dump
+|   |-- riesgos_data_20251010_180630.dump
+|   |-- riesgos_data_20251010_181059.dump
+|   |-- riesgos_data_20251010_181627.dump
+|   |-- riesgos_data_20251010_181859.dump
+|   |-- riesgos_data_20251010_184442.dump
+|   |-- riesgos_data_20251011_020149.dump
+|   |-- riesgos_data_20251011_174600.dump
+|   |-- riesgos_data_20251011_174748.dump
+|   |-- riesgos_data_20251011_174835.dump
+|   |-- riesgos_data_20251011_175137.dump
+|   |-- riesgos_data_20251011_181956.dump
+|   |-- riesgos_data_20251011_182453.dump
+|   |-- riesgos_data_20251011_182518.dump
+|   |-- riesgos_data_20251011_183026.dump
+|   |-- riesgos_data_20251011_183529.dump
+|   |-- riesgos_data_20251011_184152.dump
+|   |-- riesgos_data_20251011_184352.dump
+|   |-- riesgos_data_20251011_185009.dump
+|   |-- riesgos_data_20251011_185455.dump
+|   |-- riesgos_data_20251011_185858.dump
+|   |-- riesgos_data_20251011_190746.dump
+|   |-- riesgos_data_20251011_191128.dump
+|   |-- riesgos_data_20251011_191157.dump
+|   |-- riesgos_data_20251011_191719.dump
+|   |-- riesgos_data_20251011_192632.dump
+|   |-- riesgos_data_20251011_193659.dump
+|   |-- riesgos_data_20251011_194523.dump
+|   |-- riesgos_data_20251011_211844.dump
+|   |-- riesgos_data_20251011_211906.dump
+|   |-- riesgos_data_completo.sql
+|   `-- riesgos_data_esquema.sql
+|-- db
+|   `-- docker-compose.yml
+|-- docs
+|   `-- arquitectura.md
+|-- estructura_directorios.txt
+|-- frontend
+|   `-- admin
+|       |-- node_modules
+|       |   |-- @babel
+|       |   |-- @discoveryjs
+|       |   |-- @jridgewell
+|       |   |-- @jsonjoy.com
+|       |   |-- @leichtgewicht
+|       |   |-- @types
+|       |   |-- @webassemblyjs
+|       |   |-- @webpack-cli
+|       |   |-- @xtuc
+|       |   |-- accepts
+|       |   |-- acorn
+|       |   |-- acorn-import-phases
+|       |   |-- ajv
+|       |   |-- ajv-formats
+|       |   |-- ajv-keywords
+|       |   |-- ansi-html-community
+|       |   |-- ansi-regex
+|       |   |-- anymatch
+|       |   |-- array-flatten
+|       |   |-- babel-loader
+|       |   |-- babel-plugin-polyfill-corejs2
+|       |   |-- babel-plugin-polyfill-corejs3
+|       |   |-- babel-plugin-polyfill-regenerator
+|       |   |-- baseline-browser-mapping
+|       |   |-- batch
+|       |   |-- binary-extensions
+|       |   |-- body-parser
+|       |   |-- bonjour-service
+|       |   |-- boolbase
+|       |   |-- braces
+|       |   |-- browserslist
+|       |   |-- buffer-from
+|       |   |-- bundle-name
+|       |   |-- bytes
+|       |   |-- call-bind-apply-helpers
+|       |   |-- call-bound
+|       |   |-- camel-case
+|       |   |-- caniuse-lite
+|       |   |-- chokidar
+|       |   |-- chrome-trace-event
+|       |   |-- clean-css
+|       |   |-- clone-deep
+|       |   |-- colorette
+|       |   |-- commander
+|       |   |-- common-path-prefix
+|       |   |-- compressible
+|       |   |-- compression
+|       |   |-- connect-history-api-fallback
+|       |   |-- content-disposition
+|       |   |-- content-type
+|       |   |-- convert-source-map
+|       |   |-- cookie
+|       |   |-- cookie-signature
+|       |   |-- core-js-compat
+|       |   |-- core-util-is
+|       |   |-- cross-spawn
+|       |   |-- css-select
+|       |   |-- css-what
+|       |   |-- debug
+|       |   |-- default-browser
+|       |   |-- default-browser-id
+|       |   |-- define-lazy-prop
+|       |   |-- depd
+|       |   |-- destroy
+|       |   |-- detect-node
+|       |   |-- dns-packet
+|       |   |-- dom-converter
+|       |   |-- dom-serializer
+|       |   |-- domelementtype
+|       |   |-- domhandler
+|       |   |-- domutils
+|       |   |-- dot-case
+|       |   |-- dunder-proto
+|       |   |-- ee-first
+|       |   |-- electron-to-chromium
+|       |   |-- encodeurl
+|       |   |-- enhanced-resolve
+|       |   |-- entities
+|       |   |-- envinfo
+|       |   |-- es-define-property
+|       |   |-- es-errors
+|       |   |-- es-module-lexer
+|       |   |-- es-object-atoms
+|       |   |-- escalade
+|       |   |-- escape-html
+|       |   |-- eslint-scope
+|       |   |-- esrecurse
+|       |   |-- estraverse
+|       |   |-- esutils
+|       |   |-- etag
+|       |   |-- eventemitter3
+|       |   |-- events
+|       |   |-- express
+|       |   |-- fast-deep-equal
+|       |   |-- fast-uri
+|       |   |-- fastest-levenshtein
+|       |   |-- faye-websocket
+|       |   |-- fill-range
+|       |   |-- finalhandler
+|       |   |-- find-cache-dir
+|       |   |-- find-up
+|       |   |-- flat
+|       |   |-- follow-redirects
+|       |   |-- forwarded
+|       |   |-- fresh
+|       |   |-- function-bind
+|       |   |-- gensync
+|       |   |-- get-intrinsic
+|       |   |-- get-proto
+|       |   |-- glob-parent
+|       |   |-- glob-to-regex.js
+|       |   |-- glob-to-regexp
+|       |   |-- gopd
+|       |   |-- graceful-fs
+|       |   |-- handle-thing
+|       |   |-- has-flag
+|       |   |-- has-symbols
+|       |   |-- hasown
+|       |   |-- he
+|       |   |-- hpack.js
+|       |   |-- html-minifier-terser
+|       |   |-- html-webpack-plugin
+|       |   |-- htmlparser2
+|       |   |-- http-deceiver
+|       |   |-- http-errors
+|       |   |-- http-parser-js
+|       |   |-- http-proxy
+|       |   |-- http-proxy-middleware
+|       |   |-- hyperdyperid
+|       |   |-- iconv-lite
+|       |   |-- import-local
+|       |   |-- inherits
+|       |   |-- interpret
+|       |   |-- ipaddr.js
+|       |   |-- is-binary-path
+|       |   |-- is-core-module
+|       |   |-- is-docker
+|       |   |-- is-extglob
+|       |   |-- is-glob
+|       |   |-- is-inside-container
+|       |   |-- is-network-error
+|       |   |-- is-number
+|       |   |-- is-plain-obj
+|       |   |-- is-plain-object
+|       |   |-- is-wsl
+|       |   |-- isarray
+|       |   |-- isexe
+|       |   |-- isobject
+|       |   |-- jest-worker
+|       |   |-- js-tokens
+|       |   |-- jsesc
+|       |   |-- json-parse-even-better-errors
+|       |   |-- json-schema-traverse
+|       |   |-- json5
+|       |   |-- kind-of
+|       |   |-- launch-editor
+|       |   |-- loader-runner
+|       |   |-- locate-path
+|       |   |-- lodash
+|       |   |-- lodash.debounce
+|       |   |-- loose-envify
+|       |   |-- lower-case
+|       |   |-- lru-cache
+|       |   |-- math-intrinsics
+|       |   |-- media-typer
+|       |   |-- memfs
+|       |   |-- merge-descriptors
+|       |   |-- merge-stream
+|       |   |-- methods
+|       |   |-- micromatch
+|       |   |-- mime
+|       |   |-- mime-db
+|       |   |-- mime-types
+|       |   |-- minimalistic-assert
+|       |   |-- ms
+|       |   |-- multicast-dns
+|       |   |-- negotiator
+|       |   |-- neo-async
+|       |   |-- no-case
+|       |   |-- node-forge
+|       |   |-- node-releases
+|       |   |-- normalize-path
+|       |   |-- nth-check
+|       |   |-- object-inspect
+|       |   |-- obuf
+|       |   |-- on-finished
+|       |   |-- on-headers
+|       |   |-- open
+|       |   |-- p-limit
+|       |   |-- p-locate
+|       |   |-- p-retry
+|       |   |-- p-try
+|       |   |-- param-case
+|       |   |-- parseurl
+|       |   |-- pascal-case
+|       |   |-- path-exists
+|       |   |-- path-key
+|       |   |-- path-parse
+|       |   |-- path-to-regexp
+|       |   |-- picocolors
+|       |   |-- picomatch
+|       |   |-- pkg-dir
+|       |   |-- pretty-error
+|       |   |-- process-nextick-args
+|       |   |-- proxy-addr
+|       |   |-- qs
+|       |   |-- randombytes
+|       |   |-- range-parser
+|       |   |-- raw-body
+|       |   |-- react
+|       |   |-- react-dom
+|       |   |-- readable-stream
+|       |   |-- readdirp
+|       |   |-- rechoir
+|       |   |-- regenerate
+|       |   |-- regenerate-unicode-properties
+|       |   |-- regexpu-core
+|       |   |-- regjsgen
+|       |   |-- regjsparser
+|       |   |-- relateurl
+|       |   |-- renderkid
+|       |   |-- require-from-string
+|       |   |-- requires-port
+|       |   |-- resolve
+|       |   |-- resolve-cwd
+|       |   |-- resolve-from
+|       |   |-- retry
+|       |   |-- run-applescript
+|       |   |-- safe-buffer
+|       |   |-- safer-buffer
+|       |   |-- scheduler
+|       |   |-- schema-utils
+|       |   |-- select-hose
+|       |   |-- selfsigned
+|       |   |-- semver
+|       |   |-- send
+|       |   |-- serialize-javascript
+|       |   |-- serve-index
+|       |   |-- serve-static
+|       |   |-- setprototypeof
+|       |   |-- shallow-clone
+|       |   |-- shebang-command
+|       |   |-- shebang-regex
+|       |   |-- shell-quote
+|       |   |-- side-channel
+|       |   |-- side-channel-list
+|       |   |-- side-channel-map
+|       |   |-- side-channel-weakmap
+|       |   |-- sockjs
+|       |   |-- source-map
+|       |   |-- source-map-support
+|       |   |-- spdy
+|       |   |-- spdy-transport
+|       |   |-- statuses
+|       |   |-- string_decoder
+|       |   |-- strip-ansi
+|       |   |-- supports-color
+|       |   |-- supports-preserve-symlinks-flag
+|       |   |-- tapable
+|       |   |-- terser
+|       |   |-- terser-webpack-plugin
+|       |   |-- thingies
+|       |   |-- thunky
+|       |   |-- to-regex-range
+|       |   |-- toidentifier
+|       |   |-- tree-dump
+|       |   |-- tslib
+|       |   |-- type-is
+|       |   |-- undici-types
+|       |   |-- unicode-canonical-property-names-ecmascript
+|       |   |-- unicode-match-property-ecmascript
+|       |   |-- unicode-match-property-value-ecmascript
+|       |   |-- unicode-property-aliases-ecmascript
+|       |   |-- unpipe
+|       |   |-- update-browserslist-db
+|       |   |-- util-deprecate
+|       |   |-- utila
+|       |   |-- utils-merge
+|       |   |-- uuid
+|       |   |-- vary
+|       |   |-- watchpack
+|       |   |-- wbuf
+|       |   |-- webpack
+|       |   |-- webpack-cli
+|       |   |-- webpack-dev-middleware
+|       |   |-- webpack-dev-server
+|       |   |-- webpack-merge
+|       |   |-- webpack-sources
+|       |   |-- websocket-driver
+|       |   |-- websocket-extensions
+|       |   |-- which
+|       |   |-- wildcard
+|       |   |-- ws
+|       |   |-- wsl-utils
+|       |   |-- yallist
+|       |   `-- yocto-queue
+|       |-- package-lock.json
+|       |-- package.json
+|       |-- public
+|       |   `-- index.html
+|       |-- src
+|       |   |-- App.js
+|       |   |-- components
+|       |   |-- index.js
+|       |   |-- pages
+|       |   `-- services
+|       `-- webpack.config.js
+|-- info
+|   `-- documentacion_tecnica.txt
+|-- node_modules
+|   |-- accepts
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- ajv
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- dist
+|   |   |   |-- ajv.bundle.js
+|   |   |   |-- ajv.min.js
+|   |   |   `-- ajv.min.js.map
+|   |   |-- lib
+|   |   |   |-- ajv.d.ts
+|   |   |   |-- ajv.js
+|   |   |   |-- cache.js
+|   |   |   |-- compile
+|   |   |   |-- data.js
+|   |   |   |-- definition_schema.js
+|   |   |   |-- dot
+|   |   |   |-- dotjs
+|   |   |   |-- keyword.js
+|   |   |   `-- refs
+|   |   |-- package.json
+|   |   `-- scripts
+|   |       |-- bundle.js
+|   |       |-- compile-dots.js
+|   |       |-- info
+|   |       |-- prepare-tests
+|   |       |-- publish-built-version
+|   |       `-- travis-gh-pages
+|   |-- array-flatten
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- array-flatten.js
+|   |   `-- package.json
+|   |-- asn1
+|   |   |-- Jenkinsfile
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- lib
+|   |   |   |-- ber
+|   |   |   `-- index.js
+|   |   `-- package.json
+|   |-- assert-plus
+|   |   |-- AUTHORS
+|   |   |-- CHANGES.md
+|   |   |-- README.md
+|   |   |-- assert.js
+|   |   `-- package.json
+|   |-- asynckit
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- bench.js
+|   |   |-- index.js
+|   |   |-- lib
+|   |   |   |-- abort.js
+|   |   |   |-- async.js
+|   |   |   |-- defer.js
+|   |   |   |-- iterate.js
+|   |   |   |-- readable_asynckit.js
+|   |   |   |-- readable_parallel.js
+|   |   |   |-- readable_serial.js
+|   |   |   |-- readable_serial_ordered.js
+|   |   |   |-- state.js
+|   |   |   |-- streamify.js
+|   |   |   `-- terminator.js
+|   |   |-- package.json
+|   |   |-- parallel.js
+|   |   |-- serial.js
+|   |   |-- serialOrdered.js
+|   |   `-- stream.js
+|   |-- aws-sign2
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- aws4
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- aws4.js
+|   |   |-- lru.js
+|   |   `-- package.json
+|   |-- axios
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- MIGRATION_GUIDE.md
+|   |   |-- README.md
+|   |   |-- dist
+|   |   |   |-- axios.js
+|   |   |   |-- axios.js.map
+|   |   |   |-- axios.min.js
+|   |   |   |-- axios.min.js.map
+|   |   |   |-- browser
+|   |   |   |-- esm
+|   |   |   `-- node
+|   |   |-- index.d.cts
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- lib
+|   |   |   |-- adapters
+|   |   |   |-- axios.js
+|   |   |   |-- cancel
+|   |   |   |-- core
+|   |   |   |-- defaults
+|   |   |   |-- env
+|   |   |   |-- helpers
+|   |   |   |-- platform
+|   |   |   `-- utils.js
+|   |   `-- package.json
+|   |-- bcrypt-pbkdf
+|   |   |-- CONTRIBUTING.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- body-parser
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- SECURITY.md
+|   |   |-- index.js
+|   |   |-- lib
+|   |   |   |-- read.js
+|   |   |   `-- types
+|   |   `-- package.json
+|   |-- buffer-equal-constant-time
+|   |   |-- LICENSE.txt
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   `-- test.js
+|   |-- bytes
+|   |   |-- History.md
+|   |   |-- LICENSE
+|   |   |-- Readme.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- call-bind-apply-helpers
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- actualApply.d.ts
+|   |   |-- actualApply.js
+|   |   |-- applyBind.d.ts
+|   |   |-- applyBind.js
+|   |   |-- functionApply.d.ts
+|   |   |-- functionApply.js
+|   |   |-- functionCall.d.ts
+|   |   |-- functionCall.js
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   |-- reflectApply.d.ts
+|   |   |-- reflectApply.js
+|   |   |-- test
+|   |   |   `-- index.js
+|   |   `-- tsconfig.json
+|   |-- call-bound
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   |-- test
+|   |   |   `-- index.js
+|   |   `-- tsconfig.json
+|   |-- caseless
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   `-- test.js
+|   |-- combined-stream
+|   |   |-- License
+|   |   |-- Readme.md
+|   |   |-- lib
+|   |   |   `-- combined_stream.js
+|   |   |-- package.json
+|   |   `-- yarn.lock
+|   |-- content-disposition
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- content-type
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- cookie
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- SECURITY.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- cookie-signature
+|   |   |-- History.md
+|   |   |-- Readme.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- core-util-is
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- float.patch
+|   |   |-- lib
+|   |   |   `-- util.js
+|   |   |-- package.json
+|   |   `-- test.js
+|   |-- cors
+|   |   |-- CONTRIBUTING.md
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- lib
+|   |   |   `-- index.js
+|   |   `-- package.json
+|   |-- dashdash
+|   |   |-- CHANGES.md
+|   |   |-- LICENSE.txt
+|   |   |-- README.md
+|   |   |-- etc
+|   |   |   `-- dashdash.bash_completion.in
+|   |   |-- lib
+|   |   |   `-- dashdash.js
+|   |   `-- package.json
+|   |-- debug
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- Makefile
+|   |   |-- README.md
+|   |   |-- component.json
+|   |   |-- karma.conf.js
+|   |   |-- node.js
+|   |   |-- node_modules
+|   |   |   `-- ms
+|   |   |-- package.json
+|   |   `-- src
+|   |       |-- browser.js
+|   |       |-- debug.js
+|   |       |-- index.js
+|   |       |-- inspector-log.js
+|   |       `-- node.js
+|   |-- delayed-stream
+|   |   |-- License
+|   |   |-- Makefile
+|   |   |-- Readme.md
+|   |   |-- lib
+|   |   |   `-- delayed_stream.js
+|   |   `-- package.json
+|   |-- depd
+|   |   |-- History.md
+|   |   |-- LICENSE
+|   |   |-- Readme.md
+|   |   |-- index.js
+|   |   |-- lib
+|   |   |   `-- browser
+|   |   `-- package.json
+|   |-- destroy
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- dunder-proto
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- get.d.ts
+|   |   |-- get.js
+|   |   |-- package.json
+|   |   |-- set.d.ts
+|   |   |-- set.js
+|   |   |-- test
+|   |   |   |-- get.js
+|   |   |   |-- index.js
+|   |   |   `-- set.js
+|   |   `-- tsconfig.json
+|   |-- ecc-jsbn
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   |-- lib
+|   |   |   |-- LICENSE-jsbn
+|   |   |   |-- ec.js
+|   |   |   `-- sec.js
+|   |   |-- package.json
+|   |   `-- test.js
+|   |-- ecdsa-sig-formatter
+|   |   |-- CODEOWNERS
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- package.json
+|   |   `-- src
+|   |       |-- ecdsa-sig-formatter.d.ts
+|   |       |-- ecdsa-sig-formatter.js
+|   |       `-- param-bytes-for-alg.js
+|   |-- ee-first
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- encodeurl
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- es-define-property
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   |-- test
+|   |   |   `-- index.js
+|   |   `-- tsconfig.json
+|   |-- es-errors
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- eval.d.ts
+|   |   |-- eval.js
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   |-- range.d.ts
+|   |   |-- range.js
+|   |   |-- ref.d.ts
+|   |   |-- ref.js
+|   |   |-- syntax.d.ts
+|   |   |-- syntax.js
+|   |   |-- test
+|   |   |   `-- index.js
+|   |   |-- tsconfig.json
+|   |   |-- type.d.ts
+|   |   |-- type.js
+|   |   |-- uri.d.ts
+|   |   `-- uri.js
+|   |-- es-object-atoms
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- RequireObjectCoercible.d.ts
+|   |   |-- RequireObjectCoercible.js
+|   |   |-- ToObject.d.ts
+|   |   |-- ToObject.js
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- isObject.d.ts
+|   |   |-- isObject.js
+|   |   |-- package.json
+|   |   |-- test
+|   |   |   `-- index.js
+|   |   `-- tsconfig.json
+|   |-- es-set-tostringtag
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   |-- test
+|   |   |   `-- index.js
+|   |   `-- tsconfig.json
+|   |-- escape-html
+|   |   |-- LICENSE
+|   |   |-- Readme.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- etag
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- express
+|   |   |-- History.md
+|   |   |-- LICENSE
+|   |   |-- Readme.md
+|   |   |-- index.js
+|   |   |-- lib
+|   |   |   |-- application.js
+|   |   |   |-- express.js
+|   |   |   |-- middleware
+|   |   |   |-- request.js
+|   |   |   |-- response.js
+|   |   |   |-- router
+|   |   |   |-- utils.js
+|   |   |   `-- view.js
+|   |   `-- package.json
+|   |-- extend
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- component.json
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- extsprintf
+|   |   |-- LICENSE
+|   |   |-- Makefile
+|   |   |-- Makefile.targ
+|   |   |-- README.md
+|   |   |-- jsl.node.conf
+|   |   |-- lib
+|   |   |   `-- extsprintf.js
+|   |   `-- package.json
+|   |-- fast-deep-equal
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- es6
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- react.d.ts
+|   |   |   `-- react.js
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   |-- react.d.ts
+|   |   `-- react.js
+|   |-- fast-json-stable-stringify
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- benchmark
+|   |   |   |-- index.js
+|   |   |   `-- test.json
+|   |   |-- example
+|   |   |   |-- key_cmp.js
+|   |   |   |-- nested.js
+|   |   |   |-- str.js
+|   |   |   `-- value_cmp.js
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   `-- test
+|   |       |-- cmp.js
+|   |       |-- nested.js
+|   |       |-- str.js
+|   |       `-- to-json.js
+|   |-- finalhandler
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- SECURITY.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- follow-redirects
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- debug.js
+|   |   |-- http.js
+|   |   |-- https.js
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- forever-agent
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- form-data
+|   |   |-- CHANGELOG.md
+|   |   |-- License
+|   |   |-- README.md
+|   |   |-- index.d.ts
+|   |   |-- lib
+|   |   |   |-- browser.js
+|   |   |   |-- form_data.js
+|   |   |   `-- populate.js
+|   |   `-- package.json
+|   |-- forwarded
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- fresh
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- function-bind
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- implementation.js
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   `-- test
+|   |       `-- index.js
+|   |-- get-intrinsic
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   `-- test
+|   |       `-- GetIntrinsic.js
+|   |-- get-proto
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- Object.getPrototypeOf.d.ts
+|   |   |-- Object.getPrototypeOf.js
+|   |   |-- README.md
+|   |   |-- Reflect.getPrototypeOf.d.ts
+|   |   |-- Reflect.getPrototypeOf.js
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   |-- test
+|   |   |   `-- index.js
+|   |   `-- tsconfig.json
+|   |-- getpass
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- lib
+|   |   |   `-- index.js
+|   |   `-- package.json
+|   |-- gopd
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- gOPD.d.ts
+|   |   |-- gOPD.js
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   |-- test
+|   |   |   `-- index.js
+|   |   `-- tsconfig.json
+|   |-- har-schema
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- lib
+|   |   |   |-- afterRequest.json
+|   |   |   |-- beforeRequest.json
+|   |   |   |-- browser.json
+|   |   |   |-- cache.json
+|   |   |   |-- content.json
+|   |   |   |-- cookie.json
+|   |   |   |-- creator.json
+|   |   |   |-- entry.json
+|   |   |   |-- har.json
+|   |   |   |-- header.json
+|   |   |   |-- index.js
+|   |   |   |-- log.json
+|   |   |   |-- page.json
+|   |   |   |-- pageTimings.json
+|   |   |   |-- postData.json
+|   |   |   |-- query.json
+|   |   |   |-- request.json
+|   |   |   |-- response.json
+|   |   |   `-- timings.json
+|   |   `-- package.json
+|   |-- har-validator
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- lib
+|   |   |   |-- async.js
+|   |   |   |-- error.js
+|   |   |   `-- promise.js
+|   |   `-- package.json
+|   |-- has-symbols
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   |-- shams.d.ts
+|   |   |-- shams.js
+|   |   |-- test
+|   |   |   |-- index.js
+|   |   |   |-- shams
+|   |   |   `-- tests.js
+|   |   `-- tsconfig.json
+|   |-- has-tostringtag
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   |-- shams.d.ts
+|   |   |-- shams.js
+|   |   |-- test
+|   |   |   |-- index.js
+|   |   |   |-- shams
+|   |   |   `-- tests.js
+|   |   `-- tsconfig.json
+|   |-- hasown
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   `-- tsconfig.json
+|   |-- http-errors
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- http-signature
+|   |   |-- CHANGES.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- http_signing.md
+|   |   |-- lib
+|   |   |   |-- index.js
+|   |   |   |-- parser.js
+|   |   |   |-- signer.js
+|   |   |   |-- utils.js
+|   |   |   `-- verify.js
+|   |   `-- package.json
+|   |-- iconv-lite
+|   |   |-- Changelog.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- encodings
+|   |   |   |-- dbcs-codec.js
+|   |   |   |-- dbcs-data.js
+|   |   |   |-- index.js
+|   |   |   |-- internal.js
+|   |   |   |-- sbcs-codec.js
+|   |   |   |-- sbcs-data-generated.js
+|   |   |   |-- sbcs-data.js
+|   |   |   |-- tables
+|   |   |   |-- utf16.js
+|   |   |   `-- utf7.js
+|   |   |-- lib
+|   |   |   |-- bom-handling.js
+|   |   |   |-- extend-node.js
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   `-- streams.js
+|   |   `-- package.json
+|   |-- inherits
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- inherits.js
+|   |   |-- inherits_browser.js
+|   |   `-- package.json
+|   |-- ipaddr.js
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- ipaddr.min.js
+|   |   |-- lib
+|   |   |   |-- ipaddr.js
+|   |   |   `-- ipaddr.js.d.ts
+|   |   `-- package.json
+|   |-- is-typedarray
+|   |   |-- LICENSE.md
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   `-- test.js
+|   |-- isstream
+|   |   |-- LICENSE.md
+|   |   |-- README.md
+|   |   |-- isstream.js
+|   |   |-- package.json
+|   |   `-- test.js
+|   |-- jsbn
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- example.html
+|   |   |-- example.js
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- json-schema
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- lib
+|   |   |   |-- links.js
+|   |   |   `-- validate.js
+|   |   `-- package.json
+|   |-- json-schema-traverse
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   `-- spec
+|   |       |-- fixtures
+|   |       `-- index.spec.js
+|   |-- json-stringify-safe
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- Makefile
+|   |   |-- README.md
+|   |   |-- package.json
+|   |   |-- stringify.js
+|   |   `-- test
+|   |       |-- mocha.opts
+|   |       `-- stringify_test.js
+|   |-- jsonwebtoken
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- decode.js
+|   |   |-- index.js
+|   |   |-- lib
+|   |   |   |-- JsonWebTokenError.js
+|   |   |   |-- NotBeforeError.js
+|   |   |   |-- TokenExpiredError.js
+|   |   |   |-- asymmetricKeyDetailsSupported.js
+|   |   |   |-- psSupported.js
+|   |   |   |-- rsaPssKeyDetailsSupported.js
+|   |   |   |-- timespan.js
+|   |   |   `-- validateAsymmetricKey.js
+|   |   |-- package.json
+|   |   |-- sign.js
+|   |   `-- verify.js
+|   |-- jsprim
+|   |   |-- CHANGES.md
+|   |   |-- CONTRIBUTING.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- lib
+|   |   |   `-- jsprim.js
+|   |   `-- package.json
+|   |-- jwa
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- jws
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- index.js
+|   |   |-- lib
+|   |   |   |-- data-stream.js
+|   |   |   |-- sign-stream.js
+|   |   |   |-- tostring.js
+|   |   |   `-- verify-stream.js
+|   |   |-- package.json
+|   |   `-- readme.md
+|   |-- lodash.includes
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- lodash.isboolean
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- lodash.isinteger
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- lodash.isnumber
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- lodash.isplainobject
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- lodash.isstring
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- lodash.once
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- math-intrinsics
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- abs.d.ts
+|   |   |-- abs.js
+|   |   |-- constants
+|   |   |   |-- maxArrayLength.d.ts
+|   |   |   |-- maxArrayLength.js
+|   |   |   |-- maxSafeInteger.d.ts
+|   |   |   |-- maxSafeInteger.js
+|   |   |   |-- maxValue.d.ts
+|   |   |   `-- maxValue.js
+|   |   |-- floor.d.ts
+|   |   |-- floor.js
+|   |   |-- isFinite.d.ts
+|   |   |-- isFinite.js
+|   |   |-- isInteger.d.ts
+|   |   |-- isInteger.js
+|   |   |-- isNaN.d.ts
+|   |   |-- isNaN.js
+|   |   |-- isNegativeZero.d.ts
+|   |   |-- isNegativeZero.js
+|   |   |-- max.d.ts
+|   |   |-- max.js
+|   |   |-- min.d.ts
+|   |   |-- min.js
+|   |   |-- mod.d.ts
+|   |   |-- mod.js
+|   |   |-- package.json
+|   |   |-- pow.d.ts
+|   |   |-- pow.js
+|   |   |-- round.d.ts
+|   |   |-- round.js
+|   |   |-- sign.d.ts
+|   |   |-- sign.js
+|   |   |-- test
+|   |   |   `-- index.js
+|   |   `-- tsconfig.json
+|   |-- media-typer
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- merge-descriptors
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- methods
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- mime
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- cli.js
+|   |   |-- mime.js
+|   |   |-- package.json
+|   |   |-- src
+|   |   |   |-- build.js
+|   |   |   `-- test.js
+|   |   `-- types.json
+|   |-- mime-db
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- db.json
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- mime-types
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- ms
+|   |   |-- index.js
+|   |   |-- license.md
+|   |   |-- package.json
+|   |   `-- readme.md
+|   |-- negotiator
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   |-- lib
+|   |   |   |-- charset.js
+|   |   |   |-- encoding.js
+|   |   |   |-- language.js
+|   |   |   `-- mediaType.js
+|   |   `-- package.json
+|   |-- oauth-sign
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- object-assign
+|   |   |-- index.js
+|   |   |-- license
+|   |   |-- package.json
+|   |   `-- readme.md
+|   |-- object-inspect
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- example
+|   |   |   |-- all.js
+|   |   |   |-- circular.js
+|   |   |   |-- fn.js
+|   |   |   `-- inspect.js
+|   |   |-- index.js
+|   |   |-- package-support.json
+|   |   |-- package.json
+|   |   |-- readme.markdown
+|   |   |-- test
+|   |   |   |-- bigint.js
+|   |   |   |-- browser
+|   |   |   |-- circular.js
+|   |   |   |-- deep.js
+|   |   |   |-- element.js
+|   |   |   |-- err.js
+|   |   |   |-- fakes.js
+|   |   |   |-- fn.js
+|   |   |   |-- global.js
+|   |   |   |-- has.js
+|   |   |   |-- holes.js
+|   |   |   |-- indent-option.js
+|   |   |   |-- inspect.js
+|   |   |   |-- lowbyte.js
+|   |   |   |-- number.js
+|   |   |   |-- quoteStyle.js
+|   |   |   |-- toStringTag.js
+|   |   |   |-- undef.js
+|   |   |   `-- values.js
+|   |   |-- test-core-js.js
+|   |   `-- util.inspect.js
+|   |-- on-finished
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- parseurl
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- path-to-regexp
+|   |   |-- LICENSE
+|   |   |-- Readme.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- performance-now
+|   |   |-- README.md
+|   |   |-- lib
+|   |   |   |-- performance-now.js
+|   |   |   `-- performance-now.js.map
+|   |   |-- license.txt
+|   |   |-- package.json
+|   |   |-- src
+|   |   |   |-- index.d.ts
+|   |   |   `-- performance-now.coffee
+|   |   `-- test
+|   |       |-- mocha.opts
+|   |       |-- performance-now.coffee
+|   |       |-- scripts
+|   |       `-- scripts.coffee
+|   |-- pg
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- esm
+|   |   |   `-- index.mjs
+|   |   |-- lib
+|   |   |   |-- client.js
+|   |   |   |-- connection-parameters.js
+|   |   |   |-- connection.js
+|   |   |   |-- crypto
+|   |   |   |-- defaults.js
+|   |   |   |-- index.js
+|   |   |   |-- native
+|   |   |   |-- query.js
+|   |   |   |-- result.js
+|   |   |   |-- stream.js
+|   |   |   |-- type-overrides.js
+|   |   |   `-- utils.js
+|   |   `-- package.json
+|   |-- pg-cloudflare
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- dist
+|   |   |   |-- empty.d.ts
+|   |   |   |-- empty.js
+|   |   |   |-- empty.js.map
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   `-- index.js.map
+|   |   |-- esm
+|   |   |   `-- index.mjs
+|   |   |-- package.json
+|   |   `-- src
+|   |       |-- empty.ts
+|   |       |-- index.ts
+|   |       `-- types.d.ts
+|   |-- pg-connection-string
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- esm
+|   |   |   `-- index.mjs
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- pg-int8
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- pg-pool
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- esm
+|   |   |   `-- index.mjs
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- pg-protocol
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- dist
+|   |   |   |-- b.d.ts
+|   |   |   |-- b.js
+|   |   |   |-- b.js.map
+|   |   |   |-- buffer-reader.d.ts
+|   |   |   |-- buffer-reader.js
+|   |   |   |-- buffer-reader.js.map
+|   |   |   |-- buffer-writer.d.ts
+|   |   |   |-- buffer-writer.js
+|   |   |   |-- buffer-writer.js.map
+|   |   |   |-- inbound-parser.test.d.ts
+|   |   |   |-- inbound-parser.test.js
+|   |   |   |-- inbound-parser.test.js.map
+|   |   |   |-- index.d.ts
+|   |   |   |-- index.js
+|   |   |   |-- index.js.map
+|   |   |   |-- messages.d.ts
+|   |   |   |-- messages.js
+|   |   |   |-- messages.js.map
+|   |   |   |-- outbound-serializer.test.d.ts
+|   |   |   |-- outbound-serializer.test.js
+|   |   |   |-- outbound-serializer.test.js.map
+|   |   |   |-- parser.d.ts
+|   |   |   |-- parser.js
+|   |   |   |-- parser.js.map
+|   |   |   |-- serializer.d.ts
+|   |   |   |-- serializer.js
+|   |   |   `-- serializer.js.map
+|   |   |-- esm
+|   |   |   `-- index.js
+|   |   |-- package.json
+|   |   `-- src
+|   |       |-- b.ts
+|   |       |-- buffer-reader.ts
+|   |       |-- buffer-writer.ts
+|   |       |-- inbound-parser.test.ts
+|   |       |-- index.ts
+|   |       |-- messages.ts
+|   |       |-- outbound-serializer.test.ts
+|   |       |-- parser.ts
+|   |       |-- serializer.ts
+|   |       |-- testing
+|   |       `-- types
+|   |-- pg-types
+|   |   |-- Makefile
+|   |   |-- README.md
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- index.test-d.ts
+|   |   |-- lib
+|   |   |   |-- arrayParser.js
+|   |   |   |-- binaryParsers.js
+|   |   |   |-- builtins.js
+|   |   |   `-- textParsers.js
+|   |   |-- package.json
+|   |   `-- test
+|   |       |-- index.js
+|   |       `-- types.js
+|   |-- pgpass
+|   |   |-- README.md
+|   |   |-- lib
+|   |   |   |-- helper.js
+|   |   |   `-- index.js
+|   |   `-- package.json
+|   |-- postgres-array
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- license
+|   |   |-- package.json
+|   |   `-- readme.md
+|   |-- postgres-bytea
+|   |   |-- index.js
+|   |   |-- license
+|   |   |-- package.json
+|   |   `-- readme.md
+|   |-- postgres-date
+|   |   |-- index.js
+|   |   |-- license
+|   |   |-- package.json
+|   |   `-- readme.md
+|   |-- postgres-interval
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- license
+|   |   |-- package.json
+|   |   `-- readme.md
+|   |-- proxy-addr
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- proxy-from-env
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   `-- test.js
+|   |-- psl
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- SECURITY.md
+|   |   |-- browserstack-logo.svg
+|   |   |-- data
+|   |   |   `-- rules.js
+|   |   |-- dist
+|   |   |   |-- psl.cjs
+|   |   |   |-- psl.mjs
+|   |   |   `-- psl.umd.cjs
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   |-- types
+|   |   |   |-- index.d.ts
+|   |   |   |-- test.ts
+|   |   |   `-- tsconfig.json
+|   |   `-- vite.config.js
+|   |-- punycode
+|   |   |-- LICENSE-MIT.txt
+|   |   |-- README.md
+|   |   |-- package.json
+|   |   |-- punycode.es6.js
+|   |   `-- punycode.js
+|   |-- qs
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE.md
+|   |   |-- README.md
+|   |   |-- dist
+|   |   |   `-- qs.js
+|   |   |-- lib
+|   |   |   |-- formats.js
+|   |   |   |-- index.js
+|   |   |   |-- parse.js
+|   |   |   |-- stringify.js
+|   |   |   `-- utils.js
+|   |   |-- package.json
+|   |   `-- test
+|   |       |-- empty-keys-cases.js
+|   |       |-- parse.js
+|   |       |-- stringify.js
+|   |       `-- utils.js
+|   |-- range-parser
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- raw-body
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- SECURITY.md
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- request
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   |-- lib
+|   |   |   |-- auth.js
+|   |   |   |-- cookies.js
+|   |   |   |-- getProxyFromURI.js
+|   |   |   |-- har.js
+|   |   |   |-- hawk.js
+|   |   |   |-- helpers.js
+|   |   |   |-- multipart.js
+|   |   |   |-- oauth.js
+|   |   |   |-- querystring.js
+|   |   |   |-- redirect.js
+|   |   |   `-- tunnel.js
+|   |   |-- node_modules
+|   |   |   |-- form-data
+|   |   |   `-- qs
+|   |   |-- package.json
+|   |   `-- request.js
+|   |-- safe-buffer
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- safer-buffer
+|   |   |-- LICENSE
+|   |   |-- Porting-Buffer.md
+|   |   |-- Readme.md
+|   |   |-- dangerous.js
+|   |   |-- package.json
+|   |   |-- safer.js
+|   |   `-- tests.js
+|   |-- semver
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- bin
+|   |   |   `-- semver.js
+|   |   |-- classes
+|   |   |   |-- comparator.js
+|   |   |   |-- index.js
+|   |   |   |-- range.js
+|   |   |   `-- semver.js
+|   |   |-- functions
+|   |   |   |-- clean.js
+|   |   |   |-- cmp.js
+|   |   |   |-- coerce.js
+|   |   |   |-- compare-build.js
+|   |   |   |-- compare-loose.js
+|   |   |   |-- compare.js
+|   |   |   |-- diff.js
+|   |   |   |-- eq.js
+|   |   |   |-- gt.js
+|   |   |   |-- gte.js
+|   |   |   |-- inc.js
+|   |   |   |-- lt.js
+|   |   |   |-- lte.js
+|   |   |   |-- major.js
+|   |   |   |-- minor.js
+|   |   |   |-- neq.js
+|   |   |   |-- parse.js
+|   |   |   |-- patch.js
+|   |   |   |-- prerelease.js
+|   |   |   |-- rcompare.js
+|   |   |   |-- rsort.js
+|   |   |   |-- satisfies.js
+|   |   |   |-- sort.js
+|   |   |   `-- valid.js
+|   |   |-- index.js
+|   |   |-- internal
+|   |   |   |-- constants.js
+|   |   |   |-- debug.js
+|   |   |   |-- identifiers.js
+|   |   |   |-- lrucache.js
+|   |   |   |-- parse-options.js
+|   |   |   `-- re.js
+|   |   |-- package.json
+|   |   |-- preload.js
+|   |   |-- range.bnf
+|   |   `-- ranges
+|   |       |-- gtr.js
+|   |       |-- intersects.js
+|   |       |-- ltr.js
+|   |       |-- max-satisfying.js
+|   |       |-- min-satisfying.js
+|   |       |-- min-version.js
+|   |       |-- outside.js
+|   |       |-- simplify.js
+|   |       |-- subset.js
+|   |       |-- to-comparators.js
+|   |       `-- valid.js
+|   |-- send
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- SECURITY.md
+|   |   |-- index.js
+|   |   |-- node_modules
+|   |   |   `-- encodeurl
+|   |   `-- package.json
+|   |-- serve-static
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- setprototypeof
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   `-- test
+|   |       `-- index.js
+|   |-- side-channel
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   |-- test
+|   |   |   `-- index.js
+|   |   `-- tsconfig.json
+|   |-- side-channel-list
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- list.d.ts
+|   |   |-- package.json
+|   |   |-- test
+|   |   |   `-- index.js
+|   |   `-- tsconfig.json
+|   |-- side-channel-map
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   |-- test
+|   |   |   `-- index.js
+|   |   `-- tsconfig.json
+|   |-- side-channel-weakmap
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.d.ts
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   |-- test
+|   |   |   `-- index.js
+|   |   `-- tsconfig.json
+|   |-- split2
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- bench.js
+|   |   |-- index.js
+|   |   |-- package.json
+|   |   `-- test.js
+|   |-- sshpk
+|   |   |-- Jenkinsfile
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- bin
+|   |   |   |-- sshpk-conv
+|   |   |   |-- sshpk-sign
+|   |   |   `-- sshpk-verify
+|   |   |-- lib
+|   |   |   |-- algs.js
+|   |   |   |-- certificate.js
+|   |   |   |-- dhe.js
+|   |   |   |-- ed-compat.js
+|   |   |   |-- errors.js
+|   |   |   |-- fingerprint.js
+|   |   |   |-- formats
+|   |   |   |-- identity.js
+|   |   |   |-- index.js
+|   |   |   |-- key.js
+|   |   |   |-- private-key.js
+|   |   |   |-- signature.js
+|   |   |   |-- ssh-buffer.js
+|   |   |   `-- utils.js
+|   |   |-- man
+|   |   |   `-- man1
+|   |   `-- package.json
+|   |-- statuses
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- codes.json
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- toidentifier
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- tough-cookie
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- lib
+|   |   |   |-- cookie.js
+|   |   |   |-- memstore.js
+|   |   |   |-- pathMatch.js
+|   |   |   |-- permuteDomain.js
+|   |   |   |-- pubsuffix-psl.js
+|   |   |   |-- store.js
+|   |   |   `-- version.js
+|   |   `-- package.json
+|   |-- tunnel-agent
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- tweetnacl
+|   |   |-- AUTHORS.md
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE
+|   |   |-- PULL_REQUEST_TEMPLATE.md
+|   |   |-- README.md
+|   |   |-- nacl-fast.js
+|   |   |-- nacl-fast.min.js
+|   |   |-- nacl.d.ts
+|   |   |-- nacl.js
+|   |   |-- nacl.min.js
+|   |   `-- package.json
+|   |-- type-is
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- unpipe
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- uri-js
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- dist
+|   |   |   |-- es5
+|   |   |   `-- esnext
+|   |   |-- package.json
+|   |   `-- yarn.lock
+|   |-- utils-merge
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- uuid
+|   |   |-- AUTHORS
+|   |   |-- CHANGELOG.md
+|   |   |-- LICENSE.md
+|   |   |-- README.md
+|   |   |-- bin
+|   |   |   `-- uuid
+|   |   |-- index.js
+|   |   |-- lib
+|   |   |   |-- bytesToUuid.js
+|   |   |   |-- md5-browser.js
+|   |   |   |-- md5.js
+|   |   |   |-- rng-browser.js
+|   |   |   |-- rng.js
+|   |   |   |-- sha1-browser.js
+|   |   |   |-- sha1.js
+|   |   |   `-- v35.js
+|   |   |-- package.json
+|   |   |-- v1.js
+|   |   |-- v3.js
+|   |   |-- v4.js
+|   |   `-- v5.js
+|   |-- vary
+|   |   |-- HISTORY.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- index.js
+|   |   `-- package.json
+|   |-- verror
+|   |   |-- CHANGES.md
+|   |   |-- CONTRIBUTING.md
+|   |   |-- LICENSE
+|   |   |-- README.md
+|   |   |-- lib
+|   |   |   `-- verror.js
+|   |   `-- package.json
+|   `-- xtend
+|       |-- LICENSE
+|       |-- README.md
+|       |-- immutable.js
+|       |-- mutable.js
+|       |-- package.json
+|       `-- test.js
+|-- package-lock.json
+|-- package.json
+|-- scripts
+|   |-- diagnostico_respaldo.sh
+|   |-- estructura.sql
+|   |-- organizar_proyecto.sh
+|   |-- respaldo_autolimpieza.sh
+|   `-- verificar_estructura.sh
+`-- test
+    |-- integration_test.js
+    `-- security_test.js
+
+763 directories, 1860 files

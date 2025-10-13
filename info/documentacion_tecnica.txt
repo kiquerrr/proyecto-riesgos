@@ -1,0 +1,153 @@
+# 📘 Documentación técnica — Base de datos `riesgos_data`
+
+## 🔹 Tabla: `usuarios`
+
+| Columna         | Tipo de dato         | Restricciones / Descripción                          |
+|-----------------|----------------------|------------------------------------------------------|
+| `id`            | integer              | PK, autoincremental                                  |
+| `nombre`        | text                 | Obligatorio                                          |
+| `email`         | text                 | UNIQUE                                               |
+| `clave`         | text                 | Obligatorio                                          |
+| `ip_registro`   | text                 | Opcional                                             |
+| `ubicacion`     | text                 | Opcional                                             |
+| `rol`           | text                 | CHECK: `'admin'`, `'usuario'` — Default: `'usuario'` |
+| `fecha_registro`| timestamp            | Default: `now()`                                     |
+
+---
+
+## 🔹 Tabla: `monedas`
+
+| Columna     | Tipo de dato         | Restricciones / Descripción                          |
+|-------------|----------------------|------------------------------------------------------|
+| `id`        | integer              | PK, autoincremental                                  |
+| `codigo`    | text                 | UNIQUE                                               |
+| `nombre`    | text                 | Obligatorio                                          |
+| `tipo`      | text                 | CHECK: `'fiat'`, `'cripto'`                          |
+| `pais`      | text                 | Opcional                                             |
+| `decimales` | integer              | Default: `2`                                         |
+| `activo`    | boolean              | Default: `true`                                      |
+
+---
+
+## 🔹 Tabla: `fuentes_tasa`
+
+| Columna | Tipo de dato | Descripción                  |
+|---------|--------------|------------------------------|
+| `id`    | integer      | PK, autoincremental          |
+| `nombre`| text         | Obligatorio                  |
+| `url`   | text         | Opcional                     |
+
+---
+
+## 🔹 Tabla: `tasas`
+
+| Columna             | Tipo de dato         | Descripción                                |
+|---------------------|----------------------|--------------------------------------------|
+| `id`                | integer              | PK, autoincremental                        |
+| `moneda_origen_id`  | integer              | FK → `monedas(id)`                         |
+| `moneda_destino_id` | integer              | FK → `monedas(id)`                         |
+| `fuente_id`         | integer              | FK → `fuentes_tasa(id)`                    |
+| `valor`             | numeric(18,6)        | Obligatorio                                |
+| `fecha_hora`        | timestamp            | Default: `now()`                           |
+
+---
+
+## 🔹 Tabla: `bancos`
+
+| Columna | Tipo de dato | Restricciones / Descripción              |
+|---------|--------------|------------------------------------------|
+| `id`    | integer      | PK, autoincremental                      |
+| `nombre`| text         | UNIQUE                                   |
+| `tipo`  | text         | CHECK: `'nacional'`, `'internacional'`   |
+| `activo`| boolean      | Default: `true`                          |
+
+---
+
+## 🔹 Tabla: `categorias`
+
+| Columna | Tipo de dato | Restricciones / Descripción              |
+|---------|--------------|------------------------------------------|
+| `id`    | integer      | PK, autoincremental                      |
+| `nombre`| text         | UNIQUE                                   |
+| `tipo`  | text         | CHECK: `'ingreso'`, `'egreso'`, `'neutral'` |
+
+---
+
+## 🔹 Tabla: `etiquetas`
+
+| Columna | Tipo de dato | Descripción                  |
+|---------|--------------|------------------------------|
+| `id`    | integer      | PK, autoincremental          |
+| `nombre`| text         | UNIQUE                       |
+
+---
+
+## 🔹 Tabla: `transacciones`
+
+| Columna             | Tipo de dato         | Restricciones / Descripción                            |
+|---------------------|----------------------|--------------------------------------------------------|
+| `id`                | integer              | PK, autoincremental                                    |
+| `usuario_id`        | integer              | FK → `usuarios(id)`                                    |
+| `moneda_origen_id`  | integer              | FK → `monedas(id)`                                     |
+| `moneda_destino_id` | integer              | FK → `monedas(id)`                                     |
+| `monto_origen`      | numeric(18,6)        | Obligatorio                                            |
+| `monto_convertido`  | numeric(18,6)        | Obligatorio                                            |
+| `tasa_aplicada`     | numeric(18,6)        | Obligatorio                                            |
+| `fuente_id`         | integer              | FK → `fuentes_tasa(id)`                                |
+| `fecha_hora`        | timestamp            | Default: `now()`                                       |
+| `banco_id`          | integer              | FK → `bancos(id)`                                      |
+| `comision`          | numeric(18,6)        | Default: `0`                                           |
+| `tipo_operacion`    | text                 | CHECK: `'compra'`, `'venta'`, `'recepcion'`, `'envio'` |
+| `tipo_movimiento`   | text                 | CHECK: `'ingreso'`, `'egreso'`, `'neutral'`            |
+| `referencia_externa`| text                 | Opcional                                               |
+| `descripcion`       | text                 | Opcional                                               |
+| `categoria_id`      | integer              | FK → `categorias(id)`                                  |
+
+---
+
+## 🔹 Tabla: `transacciones_etiquetas`
+
+| Columna         | Tipo de dato | Descripción                        |
+|-----------------|--------------|------------------------------------|
+| `transaccion_id`| integer      | FK → `transacciones(id)`           |
+| `etiqueta_id`   | integer      | FK → `etiquetas(id)`               |
+
+---
+
+## 🔹 Tabla: `logs`
+
+| Columna     | Tipo de dato | Restricciones / Descripción                      |
+|-------------|--------------|--------------------------------------------------|
+| `id`        | integer      | PK, autoincremental                              |
+| `usuario_id`| integer      | FK → `usuarios(id)`                              |
+| `tipo`      | text         | CHECK: `'acceso'`, `'error'`, `'api'`, `'conversion'` |
+| `mensaje`   | text         | Obligatorio                                      |
+| `fecha_hora`| timestamp    | Default: `now()`                                 |
+
+---
+
+## 🔹 Tabla: `estadisticas`
+
+| Columna           | Tipo de dato | Restricciones / Descripción                      |
+|-------------------|--------------|--------------------------------------------------|
+| `id`              | integer      | PK, autoincremental                              |
+| `usuario_id`      | integer      | FK → `usuarios(id)`                              |
+| `moneda_id`       | integer      | FK → `monedas(id)`                               |
+| `tipo`            | text         | CHECK: `'diaria'`, `'semanal'`, `'mensual'`      |
+| `porcentaje_cambio`| numeric(6,2)| Obligatorio                                      |
+| `fecha`           | timestamp    | Obligatorio                                      |
+
+---
+
+## 🔹 Vistas
+
+- `balance_por_moneda`: muestra ingresos, egresos, balance neto y equivalente en Bs por usuario y moneda
+- `transacciones_resumen`: resumen completo de cada transacción con joins a todas las entidades
+- `transacciones_eficiencia`: calcula variación y resultado entre USD ↔ USDT
+
+---
+
+## 🔹 Función
+
+```sql
+convertir_monto(origen text, destino text, monto numeric)

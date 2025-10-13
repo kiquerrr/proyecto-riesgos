@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: riesgos-db
+    restart: always
+    environment:
+      POSTGRES_USER: riesgos_user
+      POSTGRES_PASSWORD: riesgos_pass
+      POSTGRES_DB: riesgos_data
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  db_data:
