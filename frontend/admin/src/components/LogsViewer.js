@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getRespaldoLogs } from '../services/adminService';
+import * as adminService from '../services/adminService';
 
 const LogsViewer = () => {
     const [logs, setLogs] = useState('');
@@ -7,11 +7,13 @@ const LogsViewer = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        // En una aplicaci\u00f3n real, se deber\u00eda recargar el componente o llamar aqu\u00ed
-        // para tener el log actualizado
-        getRespaldoLogs()
-            .then(res => {
-                setLogs(`Archivo: ${res.filename} (Mostrando ${res.displayedLines} de ${res.totalLines} líneas)\n\n${res.content}`);
+        const TOKEN_TEST = 'TU_TOKEN_DE_PRUEBA_AQUI';
+        const { url, options } = adminService.getRespaldoLogsOptions(TOKEN_TEST);
+        
+        fetch(url, options)
+            .then(res => res.json())
+            .then(data => {
+                setLogs(data.logs || JSON.stringify(data, null, 2));
                 setLoading(false);
             })
             .catch(err => {
@@ -25,11 +27,11 @@ const LogsViewer = () => {
     return (
         <div className="card logs-viewer">
             <h3>📑 Logs de Respaldo y Limpieza (Últimas 50 líneas)</h3>
-            
+
             {error ? (
                 <div style={{ color: 'red', padding: '10px', border: '1px solid red' }}>
                     ❌ Error de carga/Acceso: {error}
-                    <p style={{marginTop: '5px', fontSize: '0.9em'}}>Recuerde que esta operaci\u00f3n requiere un Token de Administrador v\u00e1lido.</p>
+                    <p style={{marginTop: '5px', fontSize: '0.9em'}}>Recuerde que esta operación requiere un Token de Administrador válido.</p>
                 </div>
             ) : (
                 <textarea
