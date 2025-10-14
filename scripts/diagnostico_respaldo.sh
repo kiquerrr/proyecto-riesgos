@@ -2,80 +2,68 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# ConfiguraciÃ³n
+# Configuración
 BACKUPS_DIR="/opt/riesgos-app/backups"
 SCRIPTS_DIR="/opt/riesgos-app/scripts"
 LOG_DIR="/opt/riesgos-app/_diagnostico"
 RESPALDO_SCRIPT="$SCRIPTS_DIR/respaldo_autolimpieza.sh"
 VERIFICAR_SCRIPT="$SCRIPTS_DIR/verificar_estructura.sh"
-TEMP_COUNT_FILE="$LOG_DIR/count.txt" # Archivo temporal para el conteo de tablas
+TEMP_COUNT_FILE="$LOG_DIR/count.txt"
 
-# Nombre del archivo de log de este diagnÃ³stico
+# Nombre del archivo de log de este diagnóstico
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 LOG="$LOG_DIR/diagnostico_$TIMESTAMP.log"
 
-# ConfiguraciÃ³n de la base de datos para pg_restore (Usados por docker exec)
+# Configuración de la base de datos
 CONTAINER="riesgos-db"
-DB_PASS="riesgos_pass" 
+DB_PASS="riesgos_pass"
 
 # --- Funciones ---
 
-# 1. FunciÃ³n para verificar la estructura y guardar el resultado
 ejecutar_verificacion_estructura() {
     echo "?? Verificando estructura..." | tee -a "$LOG"
     bash "$VERIFICAR_SCRIPT" | tee -a "$LOG"
 }
 
-# 2. FunciÃ³n para contar el nÃºmero de tablas en un archivo de dump
 contar_tablas_dump() {
     local DUMP_FILE="$1"
     local DUMP_NAME=$(basename "$DUMP_FILE")
     local DOCKER_DUMP_PATH="/tmp/$DUMP_NAME"
-    
-    # 1. Copiar el dump del HOST al contenedor temporalmente
+
     docker cp "$DUMP_FILE" "$CONTAINER:$DOCKER_DUMP_PATH" 2>/dev/null
 
-    # 2. Ejecutar pg_restore -l DENTRO del contenedor y contar las tablas.
-    # El resultado del conteo se escribe en otro archivo temporal DENTRO del contenedor.
     docker exec -t "$CONTAINER" bash -c "
         pg_restore -l '$DOCKER_DUMP_PATH' 2>/dev/null | grep -c 'TABLE ' > /tmp/count.txt
     "
 
-    # 3. Copiar el archivo de conteo del contenedor al HOST
     docker cp "$CONTAINER:/tmp/count.txt" "$TEMP_COUNT_FILE" 2>/dev/null
 
-    # 4. Leer el conteo, limpiar los temporales y devolver el resultado.
     local COUNT=$(cat "$TEMP_COUNT_FILE" 2>/dev/null | tr -d '[:space:]')
-    
+
     docker exec -t "$CONTAINER" rm /tmp/count.txt "$DOCKER_DUMP_PATH" 2>/dev/null
     rm "$TEMP_COUNT_FILE" 2>/dev/null
-    
-    echo "${COUNT:-0}" # Si COUNT estÃ¡ vacÃo, devuelve 0
+
+    echo "${COUNT:-0}"
 }
 
-# 3. FunciÃ³n para validar los logs del backend
 validar_logs() {
     echo "" | tee -a "$LOG"
     echo "?? Validando logs en backend/logs..." | tee -a "$LOG"
     ls -lh /opt/riesgos-app/backend/logs/*.log 2>/dev/null | tee -a "$LOG"
-    echo "?? Logs validados." | tee -a "$LOG"
+    echo "? Logs validados." | tee -a "$LOG"
 }
 
-
-# --- EjecuciÃ³n Principal ---
+# --- Ejecución Principal ---
 
 mkdir -p "$LOG_DIR"
 echo "?? Diagnóstico iniciado: $(date)" | tee -a "$LOG"
 
-# PASO 1: Verificar la estructura
 ejecutar_verificacion_estructura
 
-# PASO 2: Ejecutar Respaldo y Autolimpieza
 echo "" | tee -a "$LOG"
-echo "??? Ejecutando respaldo/autolimpieza..." | tee -a "$LOG"
+echo "?? Ejecutando respaldo/autolimpieza..." | tee -a "$LOG"
 bash "$RESPALDO_SCRIPT" | tee -a "$LOG"
 
-# PASO 3: Validar el respaldo mÃ¡s reciente
 echo "" | tee -a "$LOG"
 echo "?? Validando respaldo generado..." | tee -a "$LOG"
 
@@ -93,20 +81,17 @@ if [ -n "$ULTIMO_RESPALDO" ] && [ -f "$ULTIMO_RESPALDO" ]; then
     echo "FECHA: $(echo "$FECHA_RESPALDO" | cut -d' ' -f1) $(echo "$FECHA_RESPALDO" | cut -d' ' -f2 | cut -d':' -f1-2)" | tee -a "$LOG"
     echo "-----------------------------" | tee -a "$LOG"
 
-    # Conteo de tablas (SoluciÃ³n robusta en Docker)
     NUMERO_TABLAS=$(contar_tablas_dump "$ULTIMO_RESPALDO")
-    echo "? Tablas encontradas en dump: $NUMERO_TABLAS" | tee -a "$LOG"
+    echo "?? Tablas encontradas en dump: $NUMERO_TABLAS" | tee -a "$LOG"
 
     VALIDACION_ESTADO="OK"
     if [ "$NUMERO_TABLAS" -lt 1 ]; then
         VALIDACION_ESTADO="ERROR_BAJO_CONTEO"
     fi
 
-    # PASO 4: Validar logs
     validar_logs
-    
-    # Bloque Estructurado (sin 'tee' para la salida limpia a Node.js)
-    echo "---RESULTADO_ESTRUCTURADO---" 
+
+    echo "---RESULTADO_ESTRUCTURADO---"
     echo "ESTRUCTURA: OK"
     echo "LOGS_ESTADO: OK"
     echo "RESPALDO_ARCHIVO: $NOMBRE_RESPALDO"
@@ -116,13 +101,25 @@ if [ -n "$ULTIMO_RESPALDO" ] && [ -f "$ULTIMO_RESPALDO" ]; then
     echo "VALIDACION_ESTADO: $VALIDACION_ESTADO"
     echo "ESTADO: completo"
     echo "---------------------------"
-    
+
+    # ?? Registro de auditoría
+    TABLAS_VERIFICADAS="$NUMERO_TABLAS"
+    RESULTADO="$VALIDACION_ESTADO"
+    OBSERVACIONES="Respaldo generado: $NOMBRE_RESPALDO – $TAMANO_RESPALDO – $(date -d "$FECHA_RESPALDO" +%Y-%m-%d\ %H:%M)"
+
+    bash /opt/riesgos-app/scripts/registrar_auditoria.sh "$TABLAS_VERIFICADAS" "$RESULTADO" "$OBSERVACIONES"
+
+    if [[ $? -eq 0 ]]; then
+      echo "? Auditoría registrada exitosamente." | tee -a "$LOG"
+    else
+      echo "? Error al registrar auditoría." | tee -a "$LOG"
+    fi
+
 else
-    echo "? No se encontrÃ³ respaldo reciente en $BACKUPS_DIR" | tee -a "$LOG"
+    echo "?? No se encontró respaldo reciente en $BACKUPS_DIR" | tee -a "$LOG"
     validar_logs
-    
-    # Bloque Estructurado (FALLO)
-    echo "---RESULTADO_ESTRUCTURADO---" 
+
+    echo "---RESULTADO_ESTRUCTURADO---"
     echo "ESTRUCTURA: OK"
     echo "LOGS_ESTADO: OK"
     echo "RESPALDO_ARCHIVO: N/A"
