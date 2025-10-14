@@ -1,6 +1,6 @@
 // Configuración de las peticiones HTTP para el Dashboard de Administrador
-// Usa localhost:3000 ya que frontend y backend corren en la misma máquina
-const API_URL = 'http://localhost:3000/admin';
+// Usa la IP del contenedor ya que se accede desde fuera
+const API_URL = 'http://10.68.222.26:3000/admin';
 
 /**
  * Obtener precios de monedas (mock)

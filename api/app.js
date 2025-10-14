@@ -10,12 +10,15 @@ const authRouter = require('./routes/auth');
 const tasasRouter = require('./routes/tasas');
 const cors = require('cors');
 
-app.use(cors({
-    origin: 'http://localhost:8080',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+// Configurar CORS para permitir peticiones desde el frontend
+const corsOptions = {
+    origin: ['http://localhost:8080', 'http://10.68.222.26:8080', 'http://localhost:3000'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true,
-}));
+    allowedHeaders: ['Content-Type', 'Authorization']
+};
 
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Montar rutas
