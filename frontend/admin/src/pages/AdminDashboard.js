@@ -6,47 +6,47 @@ import MonedasCard from '../components/MonedasCard';
 
 const TOKEN_TEST = 'TU_TOKEN_DE_PRUEBA_AQUI';
 
-// Funcion de fetch segura que maneja la conexion, errores y parseo.
+// Funcion de fetch segura que maneja la conexion, errores y parseo de datos.
 const safeFetch = async (url, options) => {
     try {
         const response = await fetch(url, options);
 
         if (!response.ok) {
-            // Manejar errores de autenticacion (401/403)
+            // 1. Manejar errores de autenticacion (401/403)
             if (response.status === 401 || response.status === 403) {
                 throw new Error("Acceso denegado. Token no valido o expirado.");
             }
             
-            // Intentar leer el cuerpo del error
+            // 2. Intentar leer el cuerpo del error (siempre deberia ser JSON)
             try {
                 const errorBody = await response.json();
                 throw new Error("Error en la peticion (" + response.status + "): " + (errorBody.error || response.statusText));
             } catch (e) {
-                // Falla al leer JSON (ej. si el error es HTML)
+                // Falla al leer JSON 
                 throw new Error("Error en la peticion: " + response.statusText);
             }
         }
 
-        // Si la respuesta es OK, intentar retornar JSON
+        // 3. Si la respuesta es OK (200), intentar retornar JSON.
+        // Si falla (como la ruta de logs), retornamos como texto. Esto resuelve el problema de parseo.
         try {
-            return response.json();
+            return await response.json();
         } catch (e) {
-            // Si el cuerpo no es JSON (ej. si es la ruta de logs), retornar texto
-            return response.text(); 
+            return await response.text(); 
         }
 
     } catch (error) {
-        // Error de red (Failed to fetch) o error lanzado arriba
+        // Error de red (Failed to fetch) o error lanzado en los bloques anteriores
         throw new Error(error.message);
     }
 };
 
 const AdminDashboard = () => {
-    // Estado para logs
+    // Estado para logs. Inicializado con mensaje.
     const [logs, setLogs] = useState('Cargando logs...');
     const [logError, setLogError] = useState(null);
 
-    // Estado para monedas
+    // Estado para monedas. Inicializado en null.
     const [monedas, setMonedas] = useState(null);
     const [monedasError, setMonedasError] = useState(null);
 
@@ -54,15 +54,15 @@ const AdminDashboard = () => {
     const [restartError, setRestartError] = useState(null);
     const [restartMessage, setRestartMessage] = useState(null);
 
-    // Cargar Logs y Monedas al inicio
+    // Cargar Logs y Monedas al inicio (useEffect se ejecuta una sola vez al montar el componente)
     useEffect(() => {
-        // Monedas (Ruta NO protegida)
+        // FETCH 1: Monedas (Ruta NO protegida)
         const { url: monedasUrl, options: monedasOptions } = adminService.getMonedasPreciosOptions();
         safeFetch(monedasUrl, monedasOptions)
             .then(data => setMonedas(data))
             .catch(error => setMonedasError("Error al cargar monedas: " + error.message));
 
-        // Logs (Ruta protegida por token)
+        // FETCH 2: Logs (Ruta protegida por token)
         const { url: logsUrl, options: logsOptions } = adminService.getRespaldoLogsOptions(TOKEN_TEST);
         safeFetch(logsUrl, logsOptions)
             .then(data => setLogs(data.logs || data)) // data.logs para JSON, data para texto plano
