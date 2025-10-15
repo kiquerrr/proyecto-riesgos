@@ -5,34 +5,34 @@
 ### Completado
 
 #### Backend
-- ✅ Servidor Node.js/Express configurado en puerto 3000
-- ✅ 4 endpoints principales operativos:
+- ? Servidor Node.js/Express configurado en puerto 3000
+- ? 4 endpoints principales operativos:
   - GET `/` - API en funcionamiento
   - GET `/admin/*` - Rutas administrativas
-  - POST `/auth/login` - Autenticación con JWT
+  - POST `/auth/login` - Autenticaci�n con JWT
   - GET `/tasas` - Consulta de tasas de cambio
-- ✅ JWT tokens generándose correctamente desde .env
-- ✅ CORS configurado para permitir peticiones del frontend
-- ✅ Base de datos PostgreSQL conectada
-- ✅ Middleware de autenticación implementado
+- ? JWT tokens gener�ndose correctamente desde .env
+- ? CORS configurado para permitir peticiones del frontend
+- ? Base de datos PostgreSQL conectada
+- ? Middleware de autenticaci�n implementado
 
 #### Frontend
-- ✅ Webpack dev server corriendo en puerto 8080
-- ✅ React admin panel cargando correctamente
-- ✅ 3 componentes principales:
+- ? Webpack dev server corriendo en puerto 8080
+- ? React admin panel cargando correctamente
+- ? 3 componentes principales:
   - SaneamientoCard - Control de resiliencia de BD
   - MonedasCard - Tasas de cambio
   - LogCard - Logs de respaldo y limpieza
-- ✅ Conexión exitosa frontend-backend
-- ✅ CORS funcionando correctamente
+- ? Conexi�n exitosa frontend-backend
+- ? CORS funcionando correctamente
 
-#### Estructura y Organización
-- ✅ Git inicializado y conectado a GitHub
-- ✅ .gitignore configurado correctamente
-- ✅ Variables de entorno (.env) configuradas
-- ✅ Punto de entrada unificado (api/app.js)
-- ✅ Controllers no usados eliminados
-- ✅ Estructura de carpetas limpia y modular
+#### Estructura y Organizaci�n
+- ? Git inicializado y conectado a GitHub
+- ? .gitignore configurado correctamente
+- ? Variables de entorno (.env) configuradas
+- ? Punto de entrada unificado (api/app.js)
+- ? Controllers no usados eliminados
+- ? Estructura de carpetas limpia y modular
 
 #### Commits
 1. Initial commit: proyecto riesgos estructura base
@@ -43,7 +43,7 @@
 6. fix: configure CORS and update frontend API connection
 7. refactor: remove unused admin controllers
 
-### Configuración Actual
+### Configuraci�n Actual
 
 **Backend:**
 - Express.js 4.18.2
@@ -65,26 +65,25 @@
 
 ### Estado del Proyecto
 ```
-BACKEND:     ✅ Funcional
-FRONTEND:    ✅ Funcional
-DATABASE:    ✅ Conectada
-API:         ✅ Operativa
-GIT:         ✅ Versionado
+BACKEND:     ? Funcional
+FRONTEND:    ? Funcional
+DATABASE:    ? Conectada
+API:         ? Operativa
+GIT:         ? Versionado
 ```
 
-### Próximas Fases
+### Pr�ximas Fases
 
 - [ ] Revisar esquema de base de datos
 - [ ] Validar integridad de datos
 - [ ] Expandir funcionalidad del frontend
-- [ ] Agregar más endpoints
+- [ ] Agregar m�s endpoints
 - [ ] Implementar validaciones adicionales
-- [ ] Crear documentación completa de API
+- [ ] Crear documentaci�n completa de API
 
-### Notas Técnicas
+### Notas T�cnicas
 
 - Frontend necesita acceder por IP real del contenedor (10.68.222.26) no por localhost
 - VPN puede bloquear acceso a IPs locales de red
 - Webpack hot reload funciona correctamente para desarrollo
-- nodemon reinicia backend automáticamente en cambios
-
+- nodemon reinicia backend autom�ticamente en cambios
